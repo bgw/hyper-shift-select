@@ -66,10 +66,8 @@ exports.decorateTerm = (Term, env) => {
         const oldMouseEvents = term.mouseEvents;
         term.mouseEvents =
           oldMouseEvents && !shouldForceSelection(term.browser, event);
-        debugger;
         // stopPropagation may have been called, do this to guarentee cleanup
         setImmediate(() => {
-          debugger;
           term.mouseEvents = oldMouseEvents;
         });
       }, {capture: true});

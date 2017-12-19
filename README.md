@@ -6,11 +6,11 @@ Most terminals don't pass through mouse events while a certain modifier key is
 pressed. On OS X, that modifier is usually `alt`. On Linux, that modifier key is
 usually `shift`.
 
-Hyper 2.x depends on xterm 2.9.2. Version 3 of xterm fixes some issues around
-this behavior, but those fixes likely won't get backported.
+Hyper 2.x depends on xterm.js 2.9.2. Version 3 of xterm.js fixes some issues
+around this behavior, but those fixes likely won't get backported.
 
-So instead, this plugin monkey-patches xterm's `SelectionManager` and hooks into
-the terminals event handlers to:
+So instead, this plugin monkey-patches xterm.js's `SelectionManager` and hooks
+into the terminals event handlers to:
 
 - [Allow the shift key to be used as that modifier key on non-Mac operating
   systems.](https://github.com/Tyriar/xterm.js/commit/0e0ecc2d6a64)
