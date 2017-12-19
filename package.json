@@ -1,0 +1,15 @@
+{
+  "name": "hyper-shift-select",
+  "version": "0.0.1",
+  "description": "Workaround for xterm 2.9.2 selection issues",
+  "repository": "bgw/hyper-shift-select",
+  "license": "MIT",
+  "author": "bgw",
+  "keywords": [
+    "hyper",
+    "hyper.app",
+    "hyperterm",
+    "terminal"
+  ],
+  "main": "index.js"
+}
