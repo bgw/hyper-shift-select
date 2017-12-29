@@ -72,6 +72,31 @@ exports.decorateTerm = (Term, env) => {
         });
       }, {capture: true});
 
+      // xterm v3 has a patch that fixes the selection manager's buffer in
+      // alt-screen mode. This one line: https://git.io/vbNfU
+      //
+      // https://github.com/zeit/hyper/issues/2429
+      // https://github.com/xtermjs/xterm.js/issues/1049
+      const oldSetMode = term.inputHandler.setMode;
+      term.inputHandler.setMode = function(params) {
+        oldSetMode.call(this, params);
+        if (params.length > 1) {
+          return;
+        }
+        // alt-screen buffer
+        if (this._terminal.prefix === '?') {
+          switch (params[0]) {
+            case 1049:
+            case 47:
+            case 1047:
+              this._terminal.selectionManager.setBuffer(
+                this._terminal.buffer.lines
+              );
+              break;
+          }
+        }
+      }
+
       // terms might get recycled, so only patch once
       term._isPatched = true;
     }

@@ -17,6 +17,10 @@ into the terminals event handlers to:
 - [Avoid passing through mousedown events while the modifier key is
   pressed.](https://github.com/xtermjs/xterm.js/pull/1091)
 
+This plugin also fixes a bug where [copying text from an application in
+alt-screen mode wouldn't copy from the correct
+buffer](https://github.com/zeit/hyper/issues/2429).
+
 **Important:** Designed for Hyper 2.x
 
 ---
