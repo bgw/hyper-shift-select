@@ -1,5 +1,12 @@
 # hyper-shift-select
 
+**DO NOT USE THIS PLUGIN.** Instead, upgrade to the latest version of Hyper 2.x.
+It fixes the issues this was intended to solve.
+
+This plugin is unmaintained.
+
+---
+
 ![](demo.gif)
 
 Most terminals don't pass through mouse events while a certain modifier key is
